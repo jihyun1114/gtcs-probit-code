@@ -1,0 +1,31 @@
+# --- Generated data & results (reproducible; not tracked) ---
+DATA.rds
+*.rds
+simulation/results/
+realdata_results/
+
+# --- Sensitive / restricted real data (never commit) ---
+*.xls
+*.xlsx
+*.csv
+*.swab*
+g.2008.swab*
+
+# --- Generated figures & tables ---
+baseplot1.png
+baseplot2.png
+realplot*.png
+*.tex
+!README*.tex
+
+# --- R / LaTeX / OS cruft ---
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+.DS_Store
