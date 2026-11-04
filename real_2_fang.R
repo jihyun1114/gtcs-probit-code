@@ -1,8 +1,8 @@
-# Fang final: fit + profile-likelihood SE at the AIC/BIC-selected model (order=1, n.int=5).
+# Fang final: fit + profile-likelihood SE with the I-spline matched to ECM/Gibbs (order=3, n.int=10).
 source("fang_code/Support_functions_fixed.R")
 suppressMessages({library(doParallel); library(foreach)})
 
-ALPHA<-0.947; BETA<-0.989; POOL<-5; SEED<-2025; ORD<-1; NINT<-5
+ALPHA<-0.947; BETA<-0.989; POOL<-5; SEED<-2025; ORD<-3; NINT<-10
 raw<-read.table("g.2008.swab.xls",header=TRUE); keep<-raw$age>0
 age<-raw$age[keep]; gender<-as.integer(raw$gender[keep]); camer<-as.integer(raw$race[keep]==1)
 z<-cbind(gender,camer); xt<-age; ind<-as.integer(raw$test_result[keep])
