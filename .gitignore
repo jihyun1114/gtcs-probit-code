@@ -11,6 +11,9 @@ realdata_results/
 *.swab*
 g.2008.swab*
 
+# --- Third-party code, not redistributed (obtain separately; see README) ---
+fang_code/
+
 # --- Generated figures & tables ---
 baseplot1.png
 baseplot2.png

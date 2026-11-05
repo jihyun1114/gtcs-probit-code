@@ -41,7 +41,7 @@ sim_6_baseplots.R         Figures 1-2 (baseline S0)     -> baseplot1.png, basepl
 real_1_ecm_gibbs.R        ECM + Gibbs on chlamydia data -> table5_{ecm,gibbs}.csv, realplot_final.png
 real_2_fang.R             Fang et al. on chlamydia data -> table5_fang.csv
 
-fang_code/                Fang et al. (2027) estimator, adapted (see note below)
+fang_code/                NOT included — supply Fang et al. (2027)'s code here (see note below)
 ```
 
 `ECM.R` and `Gibbs.R` are `source()`-d by the drivers; run the numbered scripts in order.
@@ -81,11 +81,14 @@ Rscript real_2_fang.R             # Fang et al. -> Table 5 column
 
 ## The Fang et al. (2027) comparison
 
-`fang_code/` adapts the estimator of Fang et al. (2027) to the group-tested current status
-setting used here. `Support_functions_matched.R` fixes the spline specification to match the
-proposed methods (degree 3, 10 equal-probability quantile knots) for a controlled comparison;
-`Support_functions_fixed.R` is used for the real data. The underlying method is due to
-Fang et al.; please cite their work when using this part.
+The estimator of Fang et al. (2027) is used as a competing method, but **their code is not
+redistributed here** (it carries no redistribution license). To reproduce the Fang columns,
+obtain the authors' "Support functions" code from the Statistica Sinica supplement for
+Fang et al. (2027) (DOI 10.5705/ss.202024.0099) and place it under `fang_code/`, then apply
+the spline setting used throughout this study — I-splines of degree 3 with 10 interior knots
+at equal-probability quantiles of the test times — as `Support_functions_matched.R`
+(simulation) and `Support_functions_fixed.R` (real data). `sim_4_Fang.R` and `real_2_fang.R`
+`source()` these two files. Please cite Fang et al. (2027) when using this comparison.
 
 ## Citation
 
